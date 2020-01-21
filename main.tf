@@ -15,12 +15,12 @@ resource "azurerm_network_security_group" "nsg" {
 }
 
 resource "azurerm_subnet" "subnet" {
-  name                 = "${var.subnet_names[count.index]}-SUBNET"
-  virtual_network_name = azurerm_virtual_network.vnet.name
-  resource_group_name  = var.resource_group_name
-  address_prefix       = var.subnet_prefixes[count.index]
-  #network_security_group_id = element(azurerm_network_security_group.nsg.*.id, count.index)
-  count = length(var.subnet_names)
+  name                      = "${var.subnet_names[count.index]}-SUBNET"
+  virtual_network_name      = azurerm_virtual_network.vnet.name
+  resource_group_name       = var.resource_group_name
+  address_prefix            = var.subnet_prefixes[count.index]
+  network_security_group_id = element(azurerm_network_security_group.nsg.*.id, count.index)
+  count                     = length(var.subnet_names)
 }
 
 resource "azurerm_subnet_network_security_group_association" "subnet_association" {
