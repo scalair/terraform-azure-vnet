@@ -7,7 +7,7 @@ resource "azurerm_virtual_network" "vnet" {
 }
 
 resource "azurerm_network_security_group" "nsg" {
-  name                = var.subnet_names[count.index]
+  name                = var.subnet_names[count.index] - NSG
   location            = var.location
   resource_group_name = var.resource_group_name
   tags                = var.tags
