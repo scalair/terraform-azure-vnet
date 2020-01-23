@@ -24,7 +24,7 @@ variable "vnet_name" {
   default     = ""
 }
 
-variable "vnet_dns_servers" {
+variable "dns_servers" {
   description = "The DNS servers to be used with vNet. If empty, default will be Azure dns servers"
   type        = list(string)
   default     = [""]
