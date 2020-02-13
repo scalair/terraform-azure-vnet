@@ -1,6 +1,6 @@
 # Changelog
 
-## v1.0.0 - 2020-01-20
+## v1.0.1 - 2020-01-20
 ### Change
  - Adding the DNS server management add the virtual network level
 
