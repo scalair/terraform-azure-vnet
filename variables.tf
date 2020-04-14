@@ -27,7 +27,7 @@ variable "vnet_name" {
 variable "dns_servers" {
   description = "The DNS servers to be used with vNet. If empty, default will be Azure dns servers"
   type        = list(string)
-  default     = [""]
+  default     = ["8.8.8.8","4.4.4.4"]
 }
 
 # Subnet variables
